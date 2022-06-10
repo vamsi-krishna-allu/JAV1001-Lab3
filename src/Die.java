@@ -66,7 +66,9 @@ public class Die {
      * Setters to set the current side up value from outside class
      */
     public void setCurrentSideUp(int currentSideUp) {
-        this.currentSideUp = currentSideUp;
+        if(currentSideUp <= this.getNumberOfSides()){
+            this.currentSideUp = currentSideUp;
+        }
     }
 
     /**
