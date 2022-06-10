@@ -82,15 +82,11 @@ public class DiceGame {
         }
 
         int count = 1;
-        while (true) {
-            if (areAllDiceSideUpsMatched(listOfDie)) {
-                break;
-            } else {
-                count++;
-                listOfDie.forEach(die -> {
-                    die.setCurrentSideUp(die.rollDice());
-                });
-            }
+        while (!areAllDiceSideUpsMatched(listOfDie)) {
+            count++;
+            listOfDie.forEach(die -> {
+                die.setCurrentSideUp(die.rollDice());
+            });
         }
 
         System.out.println("YAHTZEE! It took " + count + " rolls");
