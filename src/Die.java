@@ -101,7 +101,7 @@ public class Die {
      * @return
      */
     public int rollDice() {
-        return (int) ((Math.random()) * this.numberOfSides);
+        return (int) (Math.floor(Math.random() * (this.numberOfSides)) + 1);
     }
 
 }

@@ -51,16 +51,28 @@ public class DiceGame {
         System.out.println("-----");
 
         System.out.println("Rolling the d6...");
-        defaultDie.rollDice();
-        System.out.println("The new value is " + defaultDie.getCurrentSideUp());
+        defaultDie.setCurrentSideUp(defaultDie.rollDice());
+        if (defaultDie.getCurrentSideUp() == defaultDie.getNumberOfSides()) {
+            System.out.println("YAY! It's a " + defaultDie.getCurrentSideUp());
+        } else {
+            System.out.println("The new value is " + defaultDie.getCurrentSideUp());
+        }
 
         System.out.println("Rolling the d20...");
-        dieWithSides.rollDice();
-        System.out.println("YAY! It's a " + dieWithSides.getCurrentSideUp());
+        dieWithSides.setCurrentSideUp(dieWithSides.rollDice());
+        if (dieWithSides.getCurrentSideUp() == dieWithSides.getNumberOfSides()) {
+            System.out.println("YAY! It's a " + dieWithSides.getCurrentSideUp());
+        } else {
+            System.out.println("The new value is " + dieWithSides.getCurrentSideUp());
+        }
 
         System.out.println("Rolling the Percentile...");
-        dieWithSidesAndName.rollDice();
-        System.out.println("The new value is " + dieWithSidesAndName.getCurrentSideUp());
+        dieWithSidesAndName.setCurrentSideUp(dieWithSidesAndName.rollDice());
+        if (dieWithSidesAndName.getCurrentSideUp() == dieWithSidesAndName.getNumberOfSides()) {
+            System.out.println("YAY! It's a " + dieWithSidesAndName.getCurrentSideUp());
+        } else {
+            System.out.println("The new value is " + dieWithSidesAndName.getCurrentSideUp());
+        }
 
         System.out.println("Setting the d20 to show 20...");
         dieWithSides.setCurrentSideUp(dieWithSides.getNumberOfSides());
